@@ -1,8 +1,6 @@
 import json
 import os
 import typer
-from concurrent.futures import ThreadPoolExecutor,as_completed
-from rich.progress import Progress
 app=typer.Typer()
 
 
