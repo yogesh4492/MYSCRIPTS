@@ -26,7 +26,7 @@ from rich.table import Table
 import pickle
 
 # Scopes required for Google Drive API
-SCOPES = ['https://www.googleapis.com/auth/drive.file']
+SCOPES = ['https://www.googleapis.com/auth/drive']
 
 app = typer.Typer(help="Upload files to Google Drive with metadata")
 console = Console()
@@ -361,7 +361,7 @@ def upload(
     # Authenticate
     console.print("[cyan]Authenticating with Google Drive...[/cyan]")
     creds = authenticate(credentials_file, token_file)
-    service = build('drive', 'v3', credentials=creds, cache_discovery=False)
+    service = build('drive', 'v3', credentials=creds)
     console.print("[green]✓ Authentication successful[/green]\n")
     
     # Verify parent folder if provided
